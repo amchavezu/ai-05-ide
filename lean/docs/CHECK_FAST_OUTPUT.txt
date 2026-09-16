@@ -42,3 +42,21 @@ All five selected proof endpoints close without `sorry`.
 This receipt does not claim a full AppliedModelingLib v11 semantic closeout.
 The package status remains `partially formalized` because the paper's continuum
 assignment equilibrium and full Propositions 5-6 are outside this Lean scope.
+
+Re-audit on 2026-09-16
+======================
+
+The required paper-scoped check was run again from the AppliedModelingLib root
+with exit status 0:
+
++ lake build +IT25KnowledgeEconomy.PaperInterface
+Build completed successfully (8315 jobs).
++ git diff --check -- papers/IT25KnowledgeEconomy papers/IT25KnowledgeEconomy.lean lakefile.toml ':(exclude)papers/IT25KnowledgeEconomy/source/'
+
+The complete target was then rebuilt with exit status 0:
+
+Build completed successfully (8317 jobs).
+
+`#print axioms` on all five `...provesSpec` endpoints reported only Lean's
+standard logical foundations: `propext`, `Classical.choice`, and `Quot.sound`.
+No paper-local axiom, `sorry`, or `admit` occurs in a Lean declaration.

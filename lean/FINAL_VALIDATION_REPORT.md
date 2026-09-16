@@ -26,3 +26,11 @@ semantic audit and closeout were not performed.
 | `matchShareDecompositionSpec` | `matchShareDecomposition_provesSpec` | Closed |
 
 See `docs/CHECK_FAST_OUTPUT.txt` for the exact required command and receipt.
+
+## Axiom and proof-hole audit
+
+On 2026-09-16, `#print axioms` for all five proof endpoints reported only
+`propext`, `Classical.choice`, and `Quot.sound`, the standard logical foundations
+used by Mathlib. There are no paper-local axiom declarations and no `sorry` or
+`admit` proof holes. This audit concerns proof closure, not source-to-Lean
+semantic equivalence.

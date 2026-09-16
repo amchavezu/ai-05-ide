@@ -10,6 +10,30 @@ Author: **Alvaro Marcelo Chávez Unyen**
 
 How does AI reorganize knowledge work when it can scale tacit knowledge, and how do its **capability** and **autonomy** separately affect wages and total output?
 
+## Notation and economic meaning
+
+| Symbol | Intuitive meaning | Role in the model |
+| --- | --- | --- |
+| `z` | A human's knowledge: the fraction of problems she can solve alone | Individual primitive |
+| `x` | Difficulty of a production problem, uniformly distributed on `[0,1]` | Random primitive |
+| `G`, `g` | Distribution and density of knowledge across humans | Population primitives |
+| `h` | Solver time consumed by each request for help | Communication-cost parameter |
+| `z_AI` (written `a` in the presentation) | Knowledge encoded in every AI agent | AI capability parameter |
+| `mu` | Total units of compute available | Compute-supply parameter |
+| `n(z)` | Number of workers of type `z` that one solver can supervise | Derived span of control |
+| `w(z)` | Wage of a human with knowledge `z` | Endogenous price |
+| `r` | Rental price of one unit of compute, hence one AI agent | Endogenous price |
+| `W`, `I`, `S` | Sets of human workers, independent producers, and solvers | Endogenous occupations |
+| `m(z)` | Knowledge of the human solver matched with worker `z` | Endogenous matching function |
+| `W_p`, `W_a` | Human workers assisted by people or by AI | Endogenous worker partition |
+| `S_p`, `S_a` | Human solvers assisting people or AI workers | Endogenous solver partition |
+| `B`, `T` | Wage winners below and above AI's knowledge | Distributional outcomes |
+
+Firms choose their organizational form, the human and AI roles, and the
+worker-solver matches to maximize expected output minus wages and compute cost.
+Competitive equilibrium combines zero profit, occupational choice, solver-time
+feasibility, and clearing of the human and compute markets.
+
 ## The economic mechanism
 
 A human with knowledge (z\in[0,1]) solves a problem of uniformly distributed difficulty with probability (z). A worker can refer an unsolved problem to a more knowledgeable solver. Each referral costs (h\in(0,1)) units of solver time, so a solver matched with workers of type (z) can supervise
