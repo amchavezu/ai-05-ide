@@ -1,0 +1,554 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+\definecolor{Ink}{HTML}{16283A}
+\definecolor{Teal}{HTML}{087F8C}
+\definecolor{Coral}{HTML}{D95D39}
+\definecolor{Paper}{HTML}{F7F4EE}
+\definecolor{Muted}{HTML}{526475}
+\definecolor{PaleTeal}{HTML}{DCEBED}
+\definecolor{PaleCoral}{HTML}{F3E1DA}
+
+\setbeamercolor{normal text}{fg=Ink,bg=Paper}
+\setbeamercolor{frametitle}{fg=Ink,bg=Paper}
+\setbeamercolor{structure}{fg=Teal}
+\setbeamercolor{alerted text}{fg=Coral}
+\setbeamercolor{title}{fg=Paper}
+\setbeamercolor{subtitle}{fg=Paper}
+\setbeamercolor{author}{fg=Paper}
+\setbeamercolor{date}{fg=Paper}
+\setbeamerfont{title}{series=\bfseries,size=\fontsize{26}{30}}
+\setbeamerfont{subtitle}{size=\normalsize}
+\setbeamerfont{frametitle}{series=\bfseries,size=\fontsize{18}{21}}
+\setbeamertemplate{navigation symbols}{}
+\setbeamersize{text margin left=0.65cm,text margin right=0.65cm}
+
+\setbeamertemplate{frametitle}{
+  \vspace{0.27cm}
+  \insertframetitle\par
+  \vspace{0.06cm}
+  {\color{Teal}\rule{\textwidth}{0.8pt}}
+}
+
+\setbeamertemplate{footline}{
+  \leavevmode
+  \hbox{%
+    \begin{beamercolorbox}[wd=.88\paperwidth,ht=2.8ex,dp=1.2ex,leftskip=.65cm]{normal text}
+      \scriptsize\color{Muted}\texttt{github.com/amchavezu/ai-05-ide}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.12\paperwidth,ht=2.8ex,dp=1.2ex,center]{normal text}
+      \scriptsize\color{Muted}\insertframenumber/14
+    \end{beamercolorbox}%
+  }
+}
+
+\newcommand{\key}[1]{\textcolor{Teal}{\textbf{#1}}}
+\newcommand{\caveat}[1]{\textcolor{Coral}{\textbf{#1}}}
+\newcommand{\sourcefoot}{\scriptsize\color{Muted}Source: Ide and Talam\`as (2025), accepted manuscript v12.}
+
+\title{Artificial Intelligence in the\\Knowledge Economy}
+\subtitle{Enrique Ide and Eduard Talam\`as\\
+Journal of Political Economy 133(12), 3762--3800}
+\author{Alvaro Marcelo Ch\'avez Unyen}
+\date{\texttt{github.com/amchavezu/ai-05-ide}}
+
+\begin{document}
+
+{
+\setbeamercolor{background canvas}{bg=Ink}
+\begin{frame}[plain]
+  \vspace{0.65cm}
+  {\usebeamerfont{title}\color{Paper}\inserttitle\par}
+  \vspace{0.40cm}
+  {\usebeamerfont{subtitle}\color{Paper}\insertsubtitle\par}
+  \vfill
+  {\large\color{Paper}\insertauthor\par}
+  \vspace{0.12cm}
+  {\small\color{Paper}\insertdate\par}
+  \vspace{0.45cm}
+\end{frame}
+}
+
+\begin{frame}{Capability and autonomy are separate dimensions}
+\small
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.47\textwidth}
+  \key{Capability: $z_{AI}$}
+
+  Which problems can the AI solve?
+
+  \vspace{0.22cm}
+  It determines whether AI is basic or advanced, whether firms use a
+  nonautonomous AI, and whether autonomous AI creates winners at the bottom.
+\end{column}
+\begin{column}{0.49\textwidth}
+  \key{Autonomy: feasible roles}
+
+  Can AI pursue production opportunities, or may it only advise humans?
+
+  \vspace{0.22cm}
+  It changes the AI's outside option, who captures team output, and whether
+  available compute produces independently.
+\end{column}
+\end{columns}
+
+\vfill
+{\color{Coral}\rule{\textwidth}{0.8pt}}\\[-0.02cm]
+\caveat{The trap.} ``Distribution depends on autonomy, not capability''
+collapses the model's two-dimensional taxonomy. Proposition 5 supplies a
+capability condition inside the autonomous regime.
+
+\vspace{0.08cm}
+\sourcefoot
+\end{frame}
+
+\begin{frame}{Knowledge hierarchies before AI}
+\small
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.43\textwidth}
+  \key{One worker, one opportunity}
+
+  Knowledge $z\in[0,1]$, difficulty $x\sim U[0,1]$:
+  \[
+  \Pr(x\le z)=z.
+  \]
+
+  A worker asks for help with probability $1-z$. Each question consumes
+  $h\in(0,1)$ units of solver time.
+\end{column}
+\begin{column}{0.54\textwidth}
+  \key{One solver, several workers}
+  \[
+  h\,n(z)(1-z)=1
+  \quad\Longrightarrow\quad
+  \boxed{n(z)=\frac{1}{h(1-z)}}.
+  \]
+
+  A solver of knowledge $s\ge z$ raises success on every residual problem.
+  More knowledgeable workers ask fewer questions, so they expand the solver's
+  span of control.
+\end{column}
+\end{columns}
+
+\vfill
+\key{Equilibrium sorting:}
+\[
+W\preceq I\preceq S,
+\qquad m:W\to S\text{ strictly increasing.}
+\]
+\sourcefoot
+\end{frame}
+
+\begin{frame}{The firm's problem determines wages}
+\small
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.54\textwidth}
+  \key{Human worker $z$, human solver $s$}
+  \[
+  \Pi_2^{nA}(s,z)
+  =n(z)[s-w(z)]-w(s).
+  \]
+
+  Zero profit gives
+  \[
+  \boxed{w(z)=s-\frac{w(s)}{n(z)}}.
+  \]
+
+  Worker pay equals match quality minus the solver's wage allocated across the
+  team.
+\end{column}
+\begin{column}{0.43\textwidth}
+  \key{Two sources of a wage change}
+  \[
+  \Delta w_L
+  =\underbrace{(s_1-s_0)}_{\text{match effect}}
+  +\underbrace{\frac{q_0-q_1}{n_L}}_{\text{share effect}}.
+  \]
+
+  AI can worsen the worker's match while lowering the solver's claim on team
+  output. The net sign need not be positive.
+\end{column}
+\end{columns}
+
+\vfill
+\sourcefoot
+\end{frame}
+
+\begin{frame}{Autonomous AI has a productive outside option}
+\small
+An AI agent has capability $a\equiv z_{AI}$ and uses one unit of compute.
+Abundant compute implies that some AI produces independently:
+\[
+\Pi_1^{AI}=a-r^A=0
+\quad\Longrightarrow\quad
+\boxed{r^A=a}.
+\]
+
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.48\textwidth}
+  \key{AI as solver}
+  \[
+  n(z)[a-w^A(z)]-a=0
+  \]
+  \[
+  \boxed{w^A(z)=a[1-h(1-z)]}.
+  \]
+\end{column}
+\begin{column}{0.48\textwidth}
+  \key{AI as worker}
+  \[
+  n(a)[s-a]-w^A(s)=0
+  \]
+  \[
+  \boxed{w^A(s)=n(a)(s-a)}.
+  \]
+\end{column}
+\end{columns}
+
+\vfill
+\sourcefoot
+\end{frame}
+
+\begin{frame}{Basic and advanced AI reorganize work differently}
+\small
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.48\textwidth}
+  \key{Basic AI: $a\in\operatorname{int}W$}
+  \[
+  W^*\subset W,
+  \qquad S^*\supset S.
+  \]
+
+  AI is a relatively cheap routine worker. Demand for human solvers rises.
+  Humans who remain workers receive worse solver matches.
+\end{column}
+\begin{column}{0.48\textwidth}
+  \key{Advanced AI: $a\in\operatorname{int}S$}
+  \[
+  W^*\supset W,
+  \qquad S^*\subset S.
+  \]
+
+  AI is a relatively cheap solver. Demand for human workers rises. The least
+  knowledgeable workers can obtain a better match.
+\end{column}
+\end{columns}
+
+\vfill
+{\color{Teal}\rule{\textwidth}{0.8pt}}\\[-0.02cm]
+\textbf{Propositions 3--4 connect occupations to wages.} They determine the
+match effect that enters Proposition 5.
+
+\vspace{0.08cm}
+\sourcefoot
+\end{frame}
+
+\begin{frame}{Proposition 5: capability governs bottom gains}
+\small
+Define winners below and above the AI's knowledge:
+\[
+B=\{z\in[0,a]:w^A(z)>w(z)\},
+\qquad
+T=\{z\in[a,1]:w^A(z)>w(z)\}.
+\]
+
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.48\textwidth}
+  \key{Bottom}
+  \[
+  \boxed{B\ne\varnothing
+  \iff a>\bar z_{AI}},
+  \qquad \bar z_{AI}\in\operatorname{int}W.
+  \]
+
+  Basic AI can generate a negative match effect. The bottom gains only when
+  capability is high enough for the share effect to dominate.
+\end{column}
+\begin{column}{0.48\textwidth}
+  \key{Top}
+  \[
+  \boxed{T\ne\varnothing
+  \quad\forall a\in[0,1)}.
+  \]
+
+  The positive share effect dominates under the maintained $h<h_0$. The
+  source notes that this can fail for $h\ge h_0$ or $a=1$.
+\end{column}
+\end{columns}
+
+\vfill
+\caveat{Key condition.} The existence of bottom winners is a statement about
+AI capability, even though Proposition 5 already holds autonomy fixed.
+
+\vspace{0.08cm}
+\sourcefoot
+\end{frame}
+
+\begin{frame}{A discrete threshold reproduces the two cases}
+\small
+For a bottom worker $z=0$ directly assisted by autonomous AI,
+\[
+w^A(0)=a(1-h).
+\]
+With $h=1/2$ and the paper's pre-AI $w(0)\approx0.35704365$,
+\[
+w^A(0)>w(0)
+\iff
+a>\frac{w(0)}{1-h}
+\approx\boxed{0.71408730}.
+\]
+
+\vspace{0.12cm}
+\centering
+\begin{tabular}{@{}ccc@{}}
+\toprule
+Capability $a$ & Autonomous bottom wage $a/2$ & Verdict \\
+\midrule
+0.425 & 0.2125 & bottom loses \\
+0.850 & 0.4250 & bottom gains \\
+\bottomrule
+\end{tabular}
+
+\vfill
+\raggedright
+\caveat{Boundary of the calculation.} This is a two-type direct-assistance
+analogue. It illustrates the capability threshold but does not derive the
+continuum model's endogenous \(\bar z_{AI}\).
+
+\vspace{0.08cm}
+\sourcefoot
+\end{frame}
+
+\begin{frame}{Proposition 6: nonautonomous AI changes incidence}
+\small
+Nonautonomous AI may advise humans but cannot pursue production opportunities.
+Abundant idle compute implies $r^N=0$.
+
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.45\textwidth}
+  \key{Activation condition}
+  \[
+  a\le w(0)
+  \Rightarrow \text{AI unused},
+  \]
+  \[
+  a>w(0)
+  \Rightarrow \text{bottom types use AI}.
+  \]
+
+  A nonautonomous AI still needs enough capability to be worth using.
+\end{column}
+\begin{column}{0.52\textwidth}
+  \key{Comparisons}
+  \begin{enumerate}\setlength\itemsep{0.07cm}
+    \item Autonomous output is strictly higher.
+    \item Nonautonomous AI creates some losers.
+    \item Near the bottom, nonautonomous wages are weakly highest.
+    \item Near the top, autonomous wages are weakly highest.
+  \end{enumerate}
+  Strict wage statements use the proposition's activation and type conditions.
+\end{column}
+\end{columns}
+
+\vfill
+\sourcefoot
+\end{frame}
+
+\begin{frame}{Nonautonomy raises bottom pay but leaves output idle}
+\small
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.49\textwidth}
+  \key{Worker assisted by AI}
+  \[
+  n(z)[a-w^N(z)]-0=0
+  \quad\Rightarrow\quad
+  w^N(z)=a.
+  \]
+  \[
+  \boxed{w^N(z)-w^A(z)=ah(1-z)>0}.
+  \]
+  Strict for $a>0$, $h>0$, $z<1$, and economically active when
+  $a>w(0)$.
+\end{column}
+\begin{column}{0.47\textwidth}
+  \key{Otherwise idle compute}
+
+  Let $Q_H$ be common human-related output and $k>0$ remaining compute:
+  \[
+  Q^N=Q_H,
+  \qquad
+  Q^A=Q_H+ka.
+  \]
+  \[
+  \boxed{Q^A-Q^N=ka>0}.
+  \]
+  Nonautonomy removes the productive worker role.
+\end{column}
+\end{columns}
+
+\vfill
+\sourcefoot
+\end{frame}
+
+\begin{frame}{What I did analytically and computationally}
+\small
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.47\textwidth}
+  \key{Hand and algebra}
+  \begin{itemize}\setlength\itemsep{0.10cm}
+    \item Derived $n(z)=1/[h(1-z)]$ from the solver's time constraint.
+    \item Decomposed a worker wage change into match and share effects.
+    \item Derived the discrete capability threshold.
+    \item Derived the autonomy wage and output gaps.
+  \end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+  \key{Reproducible checks}
+  \begin{itemize}\setlength\itemsep{0.10cm}
+    \item Recomputed $w(0)\approx0.35704365$ from the paper's uniform example.
+    \item Verified the $0.425$ and $0.85$ cases with a standard-library Python script.
+    \item Formalized five discrete claims in Lean 4/Mathlib.
+    \item Ran the paper-scoped AppliedModelingLib check before copying the Lean folder.
+  \end{itemize}
+\end{column}
+\end{columns}
+
+\vfill
+\caveat{Claim boundary.} None of these checks substitutes for the paper's
+continuum existence, matching, or neighborhood arguments.
+\end{frame}
+
+\begin{frame}{Lean scope: a transparent discrete analogue}
+\small
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.48\textwidth}
+  \key{Lean verifies}
+  \begin{itemize}\setlength\itemsep{0.10cm}
+    \item capability threshold equivalence;
+    \item nonautonomous bottom-wage advantage;
+    \item strict output gain from otherwise idle compute;
+    \item match/share decomposition.
+    \item positivity of span of control on the model domain.
+  \end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+  \key{Lean does not verify}
+  \begin{itemize}\setlength\itemsep{0.10cm}
+    \item continuum equilibrium existence or uniqueness;
+    \item occupational sets and matching maps;
+    \item equality with the paper's endogenous threshold;
+    \item the full top and bottom neighborhood claims.
+  \end{itemize}
+\end{column}
+\end{columns}
+
+\vfill
+{\color{Coral}\rule{\textwidth}{0.8pt}}\\[-0.02cm]
+\textbf{Why this boundary matters.} A short proof of an explicit algebraic
+analogue is stronger evidence than code that hides the equilibrium theorem in
+an assumption or a theorem named after the paper.
+\end{frame}
+
+\begin{frame}{Required Lean slide: the capability threshold}
+\scriptsize
+\key{1. Mathematical claim}
+\[
+w^A(0)=a(1-h),\qquad
+w^A(0)>w_0
+\iff
+a>\frac{w_0}{1-h},
+\quad 0<h<1.
+\]
+
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.52\textwidth}
+  \key{2. Lean statement}
+  \vspace{0.05cm}
+
+  {\ttfamily\fontsize{7.5}{8.7}\selectfont
+  def bottomCapabilityThresholdSpec : Prop :=\\
+  \quad $\forall$ a h w0 : $\mathbb{R}$,\\
+  \qquad 0 < h -> h < 1 ->\\
+  \qquad autonomousAssistedWage a h 0 > w0 <->\\
+  \qquad\quad a > capabilityThreshold w0 h
+  }
+
+  \vspace{0.10cm}
+  \key{Most relevant proof step}
+  \vspace{0.05cm}
+
+  {\ttfamily\fontsize{7.5}{8.7}\selectfont
+  have hden : 0 < 1 - h := sub\_pos.mpr hh1\\
+  unfold autonomousAssistedWage capabilityThreshold\\
+  simp only [sub\_zero, mul\_one]\\
+  constructor\\
+  \quad $\cdot$ exact fun hgain =>\\
+  \qquad (div\_lt\_iff$_0$ hden).2 hgain\\
+  \quad $\cdot$ exact fun hcap =>\\
+  \qquad (div\_lt\_iff$_0$ hden).1 hcap
+  }
+\end{column}
+\begin{column}{0.44\textwidth}
+  \key{3. What Lean represents}
+
+  $a$: AI capability; $h$: helping cost; $w_0$: pre-AI bottom wage.
+  The strict domain $0<h<1$ makes $1-h$ positive, so division preserves the
+  inequality direction.
+
+  \vspace{0.14cm}
+  \key{What Lean verifies}
+
+  Exactly the equivalence in the displayed discrete model, including the
+  nonzero positive denominator. It does not identify this threshold with the
+  paper's continuum \(\bar z_{AI}\).
+
+  \vspace{0.14cm}
+  \textbf{Build/check:} see \texttt{lean/docs/CHECK\_FAST\_OUTPUT.txt}.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Where I did not believe the AI}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.36\textwidth}
+  \centering
+  \IfFileExists{hand/ide-talamas-discrete.jpg}{%
+    \includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]
+      {hand/ide-talamas-discrete.jpg}%
+  }{%
+    \fbox{\parbox[c][0.58\textheight][c]{0.88\linewidth}{\centering
+      Add the real photograph of the two-page hand derivation here.}}
+  }
+\end{column}
+\begin{column}{0.60\textwidth}
+  \small
+  \key{Claim challenged}
+
+  A cold summary said that the distributional result is driven by autonomy,
+  not capability.
+
+  \vspace{0.20cm}
+  \key{Hand check}
+
+  The zero-profit equations give
+  \[
+  w^A(0)>w_0
+  \iff a>\frac{w_0}{1-h}.
+  \]
+  At $h=1/2$, $a=0.425$ is below the discrete threshold while $a=0.85$
+  is above it.
+
+  \vspace{0.16cm}
+  \caveat{Verdict.} The one-line summary is incomplete. Capability determines
+  whether there are winners at the bottom in Proposition 5. Autonomy changes
+  incidence and output in Proposition 6. Both dimensions matter.
+\end{column}
+\end{columns}
+\end{frame}
+
+\end{document}

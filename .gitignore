@@ -1,0 +1,20 @@
+# LaTeX build products (keep presentation.pdf)
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+_minted-*
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+*.swp
