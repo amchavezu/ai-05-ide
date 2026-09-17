@@ -49,7 +49,9 @@
 
 \newcommand{\key}[1]{\textcolor{Teal}{\textbf{#1}}}
 \newcommand{\caveat}[1]{\textcolor{Coral}{\textbf{#1}}}
-\newcommand{\sourcefoot}{\scriptsize\color{Muted}Source: Ide and Talam\`as (2025), accepted manuscript v12.}
+\newcommand{\sourcefoot}{\scriptsize\color{Muted}\textbf{PAPER.} Ide and Talam\`as (2025), accepted manuscript v12.}
+\newcommand{\derivationfoot}{\scriptsize\color{Muted}\textbf{DERIVATION.} Author's handwritten reconstruction of the discrete mechanism.}
+\newcommand{\interpretationfoot}{\scriptsize\color{Muted}\textbf{INTERPRETATION.} Economic reading of Propositions 5 and 6.}
 
 \title{Artificial Intelligence in the\\Knowledge Economy}
 \subtitle{Enrique Ide and Eduard Talam\`as\\
@@ -74,7 +76,41 @@ Journal of Political Economy 133(12), 3762--3800}
 \end{frame}
 }
 
-\begin{frame}{Capability and autonomy are separate dimensions}
+\begin{frame}{Why AI changes more than productivity}
+\small
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.47\textwidth}
+  \key{Before AI}
+
+  Many workers handle routine cases. Scarce experts answer the difficult
+  questions that workers cannot solve.
+
+  \vspace{0.24cm}
+  A hierarchy lets one expert's knowledge support many workers, but expert
+  time remains scarce.
+\end{column}
+\begin{column}{0.49\textwidth}
+  \key{The AI shock}
+
+  AI adds scalable knowledge. Its effect depends on how difficult a problem it
+  can solve and whether it may produce on its own.
+
+  \vspace{0.24cm}
+  Those two features change who works with whom and how the team divides its
+  output.
+\end{column}
+\end{columns}
+
+\vfill
+{\color{Coral}\rule{\textwidth}{0.8pt}}\\[-0.02cm]
+\textbf{The paper's question.} When AI enters the hierarchy, who gets a better
+expert, who captures the surplus, and does every unit of compute produce?
+
+\vspace{0.08cm}
+\sourcefoot
+\end{frame}
+
+\begin{frame}{Capability versus autonomy}
 \small
 \begin{columns}[T,totalwidth=\textwidth]
 \begin{column}{0.47\textwidth}
@@ -144,7 +180,7 @@ highest-paying occupation; compute owners rent to the highest bidder.
 \sourcefoot
 \end{frame}
 
-\begin{frame}{Knowledge hierarchies before AI}
+\begin{frame}{One expert can support many workers}
 \small
 \begin{columns}[T,totalwidth=\textwidth]
 \begin{column}{0.43\textwidth}
@@ -181,7 +217,7 @@ W\preceq I\preceq S,
 \sourcefoot
 \end{frame}
 
-\begin{frame}{The firm's problem determines wages}
+\begin{frame}{A worker's wage reflects the match and the split}
 \small
 \begin{columns}[T,totalwidth=\textwidth]
 \begin{column}{0.54\textwidth}
@@ -216,7 +252,7 @@ W\preceq I\preceq S,
 \sourcefoot
 \end{frame}
 
-\begin{frame}{Autonomous AI has a productive outside option}
+\begin{frame}{Autonomy gives AI a productive outside option}
 \small
 An AI agent has capability $a\equiv z_{AI}$ and uses one unit of compute.
 Abundant compute implies that some AI produces independently:
@@ -251,7 +287,7 @@ Abundant compute implies that some AI produces independently:
 \sourcefoot
 \end{frame}
 
-\begin{frame}{Basic and advanced AI reorganize work differently}
+\begin{frame}{Capability decides where AI enters the hierarchy}
 \small
 \begin{columns}[T,totalwidth=\textwidth]
 \begin{column}{0.48\textwidth}
@@ -285,7 +321,7 @@ match effect that enters Proposition 5.
 \sourcefoot
 \end{frame}
 
-\begin{frame}{Proposition 5: capability governs bottom gains}
+\begin{frame}{Proposition 5: capability decides whether the bottom gains}
 \small
 Define winners below and above the AI's knowledge:
 \[
@@ -326,7 +362,7 @@ AI capability, even though Proposition 5 already holds autonomy fixed.
 \sourcefoot
 \end{frame}
 
-\begin{frame}{A discrete threshold reproduces the two cases}
+\begin{frame}{A simple threshold explains the two numerical cases}
 \small
 For a bottom worker $z=0$ directly assisted by autonomous AI,
 \[
@@ -361,7 +397,7 @@ continuum model's endogenous \(\bar z_{AI}\).
 \sourcefoot
 \end{frame}
 
-\begin{frame}{Proposition 6: nonautonomous AI changes incidence}
+\begin{frame}{Proposition 6: restricting autonomy redistributes gains}
 \small
 Nonautonomous AI may advise humans but cannot pursue production opportunities.
 Abundant idle compute implies $r^N=0$.
@@ -396,7 +432,7 @@ Abundant idle compute implies $r^N=0$.
 \sourcefoot
 \end{frame}
 
-\begin{frame}{Nonautonomy raises bottom pay but leaves output idle}
+\begin{frame}{Nonautonomy raises bottom pay but sacrifices output}
 \small
 \begin{columns}[T,totalwidth=\textwidth]
 \begin{column}{0.49\textwidth}
@@ -430,6 +466,41 @@ Abundant idle compute implies $r^N=0$.
 
 \vfill
 \sourcefoot
+\end{frame}
+
+\begin{frame}{How to read the paper's results}
+\small
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.47\textwidth}
+  \key{First ask: how capable is AI?}
+
+  If capability is too low, firms may not use a nonautonomous AI at all.
+
+  \vspace{0.22cm}
+  Within the autonomous regime, capability determines whether the least
+  knowledgeable workers gain. The bottom needs AI to cross an endogenous
+  threshold.
+\end{column}
+\begin{column}{0.49\textwidth}
+  \key{Then ask: what may AI do?}
+
+  An autonomous AI can produce alone. That outside option raises the compute
+  price and keeps spare compute productive.
+
+  \vspace{0.22cm}
+  A nonautonomous AI transfers more surplus to assisted workers, but leaves
+  some compute idle and reduces total output.
+\end{column}
+\end{columns}
+
+\vfill
+{\color{Coral}\rule{\textwidth}{0.8pt}}\\[-0.02cm]
+\textbf{Bottom line.} A restriction on autonomy can help some low-knowledge
+workers while making the economy produce less. Capability and autonomy answer
+different parts of the distributional question.
+
+\vspace{0.08cm}
+\interpretationfoot
 \end{frame}
 
 \begin{frame}{What I did analytically and computationally}
@@ -551,42 +622,22 @@ a>\frac{w_0}{1-h},
 \end{columns}
 \end{frame}
 
-\begin{frame}{Where I did not believe the AI}
-\begin{columns}[T,totalwidth=\textwidth]
-\begin{column}{0.36\textwidth}
-  \centering
-  \IfFileExists{hand/ide-talamas-discrete.jpg}{%
-    \includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]
-      {hand/ide-talamas-discrete.jpg}%
-  }{%
-    \fbox{\parbox[c][0.58\textheight][c]{0.88\linewidth}{\centering
-      Add the real photograph of the two-page hand derivation here.}}
-  }
-\end{column}
-\begin{column}{0.60\textwidth}
-  \small
-  \key{Claim challenged}
+\begin{frame}[plain]
+\centering
+\includegraphics[width=\textwidth,height=0.96\paperheight,keepaspectratio,
+  clip,trim=0 800bp 0 0]{hand/derivation-threshold.jpg}
+\end{frame}
 
-  A cold summary said that the distributional result is driven by autonomy,
-  not capability.
+\begin{frame}[plain]
+\centering
+\includegraphics[width=\textwidth,height=0.96\paperheight,keepaspectratio,
+  clip,trim=0 0 0 720bp]{hand/derivation-threshold.jpg}
+\end{frame}
 
-  \vspace{0.20cm}
-  \key{Hand check}
-
-  The zero-profit equations give
-  \[
-  w^A(0)>w_0
-  \iff a>\frac{w_0}{1-h}.
-  \]
-  At $h=1/2$, $a=0.425$ is below the discrete threshold while $a=0.85$
-  is above it.
-
-  \vspace{0.16cm}
-  \caveat{Verdict.} The one-line summary is incomplete. Capability determines
-  whether there are winners at the bottom in Proposition 5. Autonomy changes
-  incidence and output in Proposition 6. Both dimensions matter.
-\end{column}
-\end{columns}
+\begin{frame}[plain]
+\centering
+\includegraphics[width=\textwidth,height=0.96\paperheight,keepaspectratio]
+  {hand/derivation-autonomy.jpg}
 \end{frame}
 
 \end{document}

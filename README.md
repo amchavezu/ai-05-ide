@@ -117,7 +117,9 @@ Lean checks five statements: positivity of the span of control on the model doma
 | `analysis/paper_map.md` | Qualitative mechanism and equation-by-equation map |
 | `analysis/discrete_audit.md` | Two-type derivation and numerical check |
 | `analysis/discrete_check.py` | Reproducible numerical calculations |
-| `hand/DERIVATION_GUIDE.md` | Exact two-page derivation to reproduce by hand |
+| `hand/DERIVATION_GUIDE.md` | Exact two-page derivation guide |
+| `hand/derivation-threshold.jpg` | Handwritten hierarchy and capability-threshold check |
+| `hand/derivation-autonomy.jpg` | Handwritten autonomy comparison and verdict |
 | `lean/` | Paper-scoped Lean formalization and validation evidence |
 | `presentation.tex` / `presentation.pdf` | Twenty-minute Beamer deck |
 | `speaker_notes.md` | Timed oral script and technical backup |

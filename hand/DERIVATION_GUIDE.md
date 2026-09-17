@@ -1,6 +1,6 @@
 # Two-page handwritten derivation guide
 
-The assignment requires a real photograph of work done by hand. Reproduce the following derivation on paper, annotate the steps in your own words, and save the final photograph as `hand/ide-talamas-discrete.jpg`.
+The assignment requires real photographs of work done by hand. The completed evidence is stored as `hand/derivation-threshold.jpg` and `hand/derivation-autonomy.jpg`.
 
 ## Page 1: hierarchy and capability threshold
 
@@ -80,4 +80,3 @@ Q^A-Q^N=ka>0.
 - Keep the inequalities and their conditions visible.
 - Circle the threshold (a>w_0/(1-h)).
 - Underline the Lean boundary: discrete algebra, not the continuum equilibrium.
-
