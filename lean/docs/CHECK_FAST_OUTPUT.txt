@@ -1,0 +1,62 @@
+IT25KnowledgeEconomy — Lean validation receipt
+Date: 2026-09-15 (America/Lima)
+Toolchain: Lean 4.30.0-rc2 / Mathlib revision 5450b53e5ddc75d46418fabb605edbf36bd0beb6
+
+Required paper-scoped check
+===========================
+
+Working directory: AppliedModelingLib root
+Command:
+python3 scripts/paper_contribution.py check IT25KnowledgeEconomy --fast
+
+Exit status: 0
+Output:
++ lake build +IT25KnowledgeEconomy.PaperInterface
+Build completed successfully (8315 jobs).
++ git diff --check -- papers/IT25KnowledgeEconomy papers/IT25KnowledgeEconomy.lean lakefile.toml ':(exclude)papers/IT25KnowledgeEconomy/source/'
+
+Stronger proof-endpoint build
+=============================
+
+Working directory: AppliedModelingLib root
+Command:
+lake build +IT25KnowledgeEconomy
+
+Exit status: 0
+Output:
+Built IT25KnowledgeEconomy.MainTheorems
+Built IT25KnowledgeEconomy.Assumptions
+Built IT25KnowledgeEconomy.PaperInterface
+Built IT25KnowledgeEconomy.ProofInterface
+Built IT25KnowledgeEconomy
+Build completed successfully (8317 jobs).
+
+Interpretation
+==============
+
+The required fast check compiles PaperInterface, which imports the theorem
+implementation layer, and checks the paper-scoped diff for whitespace errors.
+The stronger build additionally compiles ProofInterface and the root module.
+All five selected proof endpoints close without `sorry`.
+
+This receipt does not claim a full AppliedModelingLib v11 semantic closeout.
+The package status remains `partially formalized` because the paper's continuum
+assignment equilibrium and full Propositions 5-6 are outside this Lean scope.
+
+Re-audit on 2026-09-16
+======================
+
+The required paper-scoped check was run again from the AppliedModelingLib root
+with exit status 0:
+
++ lake build +IT25KnowledgeEconomy.PaperInterface
+Build completed successfully (8315 jobs).
++ git diff --check -- papers/IT25KnowledgeEconomy papers/IT25KnowledgeEconomy.lean lakefile.toml ':(exclude)papers/IT25KnowledgeEconomy/source/'
+
+The complete target was then rebuilt with exit status 0:
+
+Build completed successfully (8317 jobs).
+
+`#print axioms` on all five `...provesSpec` endpoints reported only Lean's
+standard logical foundations: `propext`, `Classical.choice`, and `Quot.sound`.
+No paper-local axiom, `sorry`, or `admit` occurs in a Lean declaration.
